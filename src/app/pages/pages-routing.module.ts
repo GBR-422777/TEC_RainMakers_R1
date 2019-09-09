@@ -11,7 +11,7 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'dashboard',
+      path: 'ecommerce',
       component: ECommerceComponent,
     },
     {
@@ -21,7 +21,7 @@ const routes: Routes = [{
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+      .then(lmodule => lmodule.LayoutModule),
     },
     {
       path: 'forms',
@@ -70,7 +70,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'ecommerce',
       pathMatch: 'full',
     },
     {
