@@ -8,6 +8,10 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { RainmakersFormsModule } from './rainmakers/rainmakers-forms.module';
+import { RainmakersChartModule } from './r-Charts/rainmakers-chart.module';
+import { ChartjsPieComponent } from './charts/chartjs/chartjs-pie.component'
+import { rainmakerschartComponent } from './r-Charts/rainmakers-chart.component'
+import { ChartModule } from 'angular2-chartjs';
 
 @NgModule({
   imports: [
@@ -18,9 +22,11 @@ import { RainmakersFormsModule } from './rainmakers/rainmakers-forms.module';
     ECommerceModule,
     MiscellaneousModule,
     RainmakersFormsModule,
+    RainmakersChartModule,
+    ChartModule,
   ],
   declarations: [
-    PagesComponent,
+    PagesComponent, ChartjsPieComponent, rainmakerschartComponent,
   ],
 })
 export class PagesModule {

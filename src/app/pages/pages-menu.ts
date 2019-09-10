@@ -16,6 +16,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'tec-chart',
+    icon: 'pie-chart-outline',
+    link: '/pages/tec-chart',
+    home: true,
+  },
+  {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',
