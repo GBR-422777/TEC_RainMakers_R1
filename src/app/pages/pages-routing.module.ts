@@ -6,11 +6,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { RainmakersFormComponent } from './rainmakers/rainmakers-form-inputs.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { AngularchartsComponent } from './angularcharts/angularcharts.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'angularcharts',
+      component: AngularchartsComponent,
+    },
     {
       path: 'rainmakers',
       component: RainmakersFormComponent,
