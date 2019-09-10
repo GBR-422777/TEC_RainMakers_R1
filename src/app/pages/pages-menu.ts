@@ -11,7 +11,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'test2',
-        link: '/pages/rainmakers/test1',
+        link: '/pages/rainmakers/test2',
       },
       
     ],
