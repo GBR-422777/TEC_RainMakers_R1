@@ -4,9 +4,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Rainmakers',
     icon: 'umbrella-outline',
-    link: '/pages/rainmakers',
-    home: true,
+    children: [
+      {
+        title: 'test1',
+        link: '/pages/rainmakers/test1',
+      },
+      {
+        title: 'test2',
+        link: '/pages/rainmakers/test1',
+      },
+      
+    ],
   },
+ 
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
