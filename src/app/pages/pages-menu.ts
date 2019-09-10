@@ -4,13 +4,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
+    link: '/pages/ecommerce',
     home: true,
   },
   {
     title: 'IoT Dashboard',
-    icon: 'home-outline',
+    icon: '-outlhomeine',
     link: '/pages/iot-dashboard',
+  },
+  {
+    title: 'Rainmakers',
+    icon: '-outlhomeine',
+    link: '/pages/Rainmakers',
+    
   },
   {
     title: 'FEATURES',

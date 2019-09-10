@@ -5,13 +5,14 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { RainmakersComponent } from './Rainmakers/rainmakers.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
     {
-      path: 'dashboard',
+      path: 'ecommerce',
       component: ECommerceComponent,
     },
     {
@@ -19,9 +20,13 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path:'Rainmakers',
+      component: RainmakersComponent
+    },
+    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+      .then(lmodule => lmodule.LayoutModule),
     },
     {
       path: 'forms',
@@ -70,7 +75,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'ecommerce',
       pathMatch: 'full',
     },
     {
