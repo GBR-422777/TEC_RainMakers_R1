@@ -13,7 +13,8 @@ const routes: Routes = [{
   children: [
     {
       path: 'rainmakers',
-      component: RainmakersFormComponent,
+      loadChildren: () => import('./rainmakers/rainmakers-forms.module')
+      .then(lmodule => lmodule.RainmakersFormsModule),
     },
     {
       path: 'ecommerce',
