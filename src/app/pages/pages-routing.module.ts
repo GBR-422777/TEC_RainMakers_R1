@@ -1,16 +1,25 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-
+import { TecAngularComponent } from './tec-angular/tec-angular.component';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { RainmakersFormComponent } from './rainmakers/rainmakers-form-inputs.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { TecAngular2Component } from './tecrainmakers/e-commerce.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'tecangular2',
+      component: TecAngular2Component,
+    },
+    {
+      path: 'tecangular',
+      component: TecAngularComponent,
+    },
     {
       path: 'rainmakers',
       component: RainmakersFormComponent,

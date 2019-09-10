@@ -2,6 +2,18 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Tecangular',
+    icon: 'umbrella',
+    link: '/pages/tecangular2',
+    home: true,
+  },
+  {
+    title: 'Tec-angular',
+    icon: 'umbrella',
+    link: '/pages/tecangular',
+    home: true,
+  },
+  {
     title: 'Rainmakers',
     icon: 'umbrella-outline',
     link: '/pages/rainmakers',
@@ -10,7 +22,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
+    link: '/pages/ecommerce',
     home: true,
   },
   {

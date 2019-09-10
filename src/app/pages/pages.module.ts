@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
-
+import { TecAngularModule } from './tec-angular/tec-angular.module';
+import {Tecangular2Module } from './tecrainmakers/e-commerce.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -8,6 +9,7 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { RainmakersFormsModule } from './rainmakers/rainmakers-forms.module';
+
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { RainmakersFormsModule } from './rainmakers/rainmakers-forms.module';
     ECommerceModule,
     MiscellaneousModule,
     RainmakersFormsModule,
+    TecAngularModule,
+    Tecangular2Module,
   ],
   declarations: [
     PagesComponent,
