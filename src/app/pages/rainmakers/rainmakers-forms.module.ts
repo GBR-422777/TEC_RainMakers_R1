@@ -1,4 +1,8 @@
 import { NgModule } from '@angular/core';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartModule } from 'angular2-chartjs';
+import { ChartjsPieComponent } from '../charts/chartjs/chartjs-pie.component';
 import {
   NbActionsModule,
   NbButtonModule,
@@ -13,6 +17,11 @@ import {
 
 import { ThemeModule } from '../../@theme/theme.module';
 
+const components = [
+
+  ChartjsPieComponent,
+  
+];
 import { Test2Component } from './form/test2/test2.component';
 import { Test1Component } from './form/test1/test1.component';
 import { RainmakersFormsRoutingModule } from './rainmakers-form-routing.module';
@@ -32,10 +41,15 @@ import { RainmakersFormComponent } from './rainmakers-form-inputs.component';
     NbSelectModule,
     NbIconModule,
     RainmakersFormsRoutingModule,
+    ThemeModule,
+    NgxEchartsModule,
+    NgxChartsModule,
+    ChartModule,
+    NbCardModule,
   
   ],
   declarations: [
-    Test1Component,Test2Component,RainmakersFormComponent
+    Test1Component,Test2Component,RainmakersFormComponent, ...components
   ],
 })
 export class RainmakersFormsModule { }
