@@ -18,9 +18,7 @@ import {
 import { ThemeModule } from '../../@theme/theme.module';
 
 const components = [
-
   ChartjsPieComponent,
-  
 ];
 import { Test2Component } from './form/test2/test2.component';
 import { Test1Component } from './form/test1/test1.component';
@@ -46,10 +44,9 @@ import { RainmakersFormComponent } from './rainmakers-form-inputs.component';
     NgxChartsModule,
     ChartModule,
     NbCardModule,
-  
   ],
   declarations: [
-    Test1Component,Test2Component,RainmakersFormComponent, ...components
+    Test1Component, Test2Component, RainmakersFormComponent, ...components,
   ],
 })
 export class RainmakersFormsModule { }

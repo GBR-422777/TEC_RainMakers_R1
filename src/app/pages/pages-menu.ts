@@ -6,17 +6,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'umbrella-outline',
     children: [
       {
-        title: 'test1',
-        link: '/pages/rainmakers/test1',
+        title: 'form',
+        link: '/pages/rainmakers/form',
       },
       {
-        title: 'test2',
-        link: '/pages/rainmakers/test2',
+        title: 'charts',
+        link: '/pages/rainmakers/charts',
       },
-      
     ],
   },
- 
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',

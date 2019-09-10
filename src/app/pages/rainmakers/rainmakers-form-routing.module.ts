@@ -10,11 +10,11 @@ const routes: Routes = [{
   component: RainmakersFormComponent,
   children: [
     {
-      path: 'test1',
+      path: 'form',
       component: Test1Component,
     },
     {
-      path: 'test2',
+      path: 'charts',
       component: Test2Component,
     },
   ],
