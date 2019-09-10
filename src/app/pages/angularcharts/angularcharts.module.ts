@@ -13,6 +13,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { AngularchartsComponent } from './angularcharts.component';
+import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
 @NgModule({
   imports: [
     ThemeModule,
@@ -29,6 +30,7 @@ import { AngularchartsComponent } from './angularcharts.component';
   ],
   declarations: [
    AngularchartsComponent,
+   EchartsPieComponent,
   ],
   providers: [
   ],

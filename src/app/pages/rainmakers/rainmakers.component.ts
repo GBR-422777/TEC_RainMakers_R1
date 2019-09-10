@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'ngx-form-inputs',
   styleUrls: ['./rainmakers.component.scss'],
   templateUrl: './rainmakers.component.html',
- 
 })
 export class RainmakersComponent {
   starRate = 2;
