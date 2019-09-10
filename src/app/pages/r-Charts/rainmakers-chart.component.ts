@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './rainmakers-chart.component.html',
   styleUrls: ['./rainmakers-chart.component.scss'],
 })
-export class rainmakerschartComponent implements OnInit {
+export class RainmakersChartComponent implements OnInit {
 
   constructor() { }
 
