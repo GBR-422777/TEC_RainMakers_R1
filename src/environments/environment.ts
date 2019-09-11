@@ -10,4 +10,5 @@
 
 export const environment = {
   production: false,
+  database_url: 'demo.tec.com/db',
 };

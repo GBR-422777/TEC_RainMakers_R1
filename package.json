@@ -40,6 +40,7 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "@asymmetrik/ngx-leaflet": "3.0.1",
+    "@ckeditor/ckeditor5-angular": "^1.1.0",
     "@nebular/auth": "4.1.2",
     "@nebular/eva-icons": "4.1.2",
     "@nebular/security": "4.1.2",
