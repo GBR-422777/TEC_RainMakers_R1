@@ -10,8 +10,7 @@ import {
   NbListModule,
 } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
-import { TecEditorComponent } from './tec-editor.component'
-import { CKEditorComponent } from 'ng2-ckeditor';
+import { TecEditorComponent } from './tec-editor.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 @NgModule({
   imports: [

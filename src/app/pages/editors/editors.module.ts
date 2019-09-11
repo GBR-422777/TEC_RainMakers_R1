@@ -18,7 +18,7 @@ import { CKEditorComponent } from './ckeditor/ckeditor.component';
     ...routedComponents,
     CKEditorComponent,
   ],
-  exports :[
+  exports : [
     CKEditorModule,
   ],
 })
