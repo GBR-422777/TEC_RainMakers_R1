@@ -6,7 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { AngularchartsComponent } from './angularcharts/angularcharts.component';
-
+import { RainmakersFormComponent } from './rainmakers/rainmakers-form-inputs.component';
+import { TecEditorComponent } from './tec-editor/tec-editor.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -16,9 +17,12 @@ const routes: Routes = [{
       component: AngularchartsComponent,
     },
     {
+      path: 'teceditor',
+      component: TecEditorComponent,
+    },
+    {
       path: 'rainmakers',
-      loadChildren: () => import('./rainmakers/rainmakers-forms.module')
-      .then(lmodule => lmodule.RainmakersFormsModule),
+      component: RainmakersFormComponent,
     },
     {
       path: 'ecommerce',

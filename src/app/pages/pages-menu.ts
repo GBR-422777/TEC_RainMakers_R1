@@ -8,18 +8,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'TecEditor',
+    icon: 'umbrella-outline',
+    link: '/pages/teceditor',
+    home: true,
+  },
+  {
     title: 'Rainmakers',
     icon: 'umbrella-outline',
-    children: [
-      {
-        title: 'test1',
-        link: '/pages/rainmakers/test1',
-      },
-      {
-        title: 'test1',
-        link: '/pages/rainmakers/test1',
-      },
-    ],
+    link: '/pages/rainmakers',
+    home: true,
   },
   {
     title: 'E-commerce',
