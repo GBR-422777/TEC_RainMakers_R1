@@ -2,6 +2,26 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Angularcharts',
+    icon: 'umbrella-outline',
+    link: '/pages/angularcharts',
+    home: true,
+  },
+  {
+    title: 'Rainmakers',
+    icon: 'umbrella-outline',
+    children: [
+      {
+        title: 'test1',
+        link: '/pages/rainmakers/test1',
+      },
+      {
+        title: 'test1',
+        link: '/pages/rainmakers/test1',
+      },
+    ],
+  },
+  {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
     link: '/pages/dashboard',
