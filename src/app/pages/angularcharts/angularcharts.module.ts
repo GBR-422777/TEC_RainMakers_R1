@@ -16,6 +16,7 @@ import { AngularchartsComponent } from './angularcharts.component';
 import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
 import { RainmakersFormsModule } from '../rainmakers/rainmakers-forms.module';
 import {FormsModule} from '@angular/forms';
+
 @NgModule({
   imports: [
     ThemeModule,
