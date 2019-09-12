@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
 import {
   NbButtonModule,
   NbCardModule,
@@ -12,9 +11,12 @@ import {
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import { ThemeModule } from '../../@theme/theme.module';
-import { AngularchartsComponent } from './angularcharts.component';
-import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
+import { RainmakersComponent } from './rainmakers.component';
+
+
+
 @NgModule({
   imports: [
     ThemeModule,
@@ -28,13 +30,11 @@ import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
     NbProgressBarModule,
     NgxEchartsModule,
     NgxChartsModule,
-    FormsModule,
   ],
   declarations: [
-   AngularchartsComponent,
-   EchartsPieComponent,
+    RainmakersComponent,
   ],
   providers: [
   ],
 })
-export class AngularchartsModule { }
+export class RainmakersModule { }
