@@ -12,7 +12,7 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private analytics: AnalyticsService) {    
+  constructor(private analytics: AnalyticsService){
   }
 
   ngOnInit(): void {

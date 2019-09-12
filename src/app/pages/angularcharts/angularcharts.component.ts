@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './angularcharts.component.html',
 })
 export class AngularchartsComponent {
-  name:string = " ";
-  constructor()
-  {}
+  name: string = ' ';
+  constructor(){}
 
 }
