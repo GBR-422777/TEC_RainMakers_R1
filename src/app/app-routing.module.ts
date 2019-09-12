@@ -45,8 +45,8 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: '/pages/angularcharts', pathMatch: 'full' },
+  { path: '**', redirectTo: '/pages/angularcharts' },
 ];
 
 const config: ExtraOptions = {

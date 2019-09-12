@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './rainmakers-form-inputs.html',
 })
 export class RainmakersFormComponent {
-
   starRate = 2;
   heartRate = 4;
   radioGroupValue = 'This is value 2';
+
 }

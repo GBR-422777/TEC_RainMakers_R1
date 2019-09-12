@@ -10,7 +10,6 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { RainmakersFormsModule } from './rainmakers/rainmakers-forms.module';
 import { AngularchartsModule } from './angularcharts/angularcharts.module';
 import { TecEditorModule } from './tec-editor/tec-editor.module';
-
 @NgModule({
   imports: [
     PagesRoutingModule,

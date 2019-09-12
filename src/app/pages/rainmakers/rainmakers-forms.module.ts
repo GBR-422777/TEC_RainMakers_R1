@@ -13,7 +13,8 @@ import {
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { RainmakersFormComponent } from './rainmakers-form-inputs.component';
-
+//import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
+//import { ChartsModule } from '../charts/charts.module';
 @NgModule({
   imports: [
     ThemeModule,
@@ -30,6 +31,7 @@ import { RainmakersFormComponent } from './rainmakers-form-inputs.component';
   ],
   declarations: [
     RainmakersFormComponent,
+    //EchartsPieComponent,
   ],
 })
 export class RainmakersFormsModule { }
