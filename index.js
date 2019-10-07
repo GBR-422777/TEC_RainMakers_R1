@@ -8,12 +8,10 @@ mongoose.connect('mongodb://localhost:27017/' + db_name, {useNewUrlParser: true}
 
 const Rainmaker = mongoose.model('Rainmaker', { name: String, major: String, age: Number });
 
-const georges = new Rainmaker({ name: "georges", major: "computer science", age: 20 });
-georges.save().then(() => console.log('georges'));
-const atrach = new Rainmaker({ name: "atrach", major: "computer science", age: 60 });
-atrach.save().then(() => console.log('atrach saved'));
-
-
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => 
+{
+    const rainmaker = new Rainmaker({ name: "georges", major: "computer science", age: 20 });
+    rainmaker.save().then(() => res.send('Hello World! georges is saved'));
+})
 
 app.listen(port, () => console.log(`The app listening on port ${port}!`))
