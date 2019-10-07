@@ -15,4 +15,10 @@ app.post('/', (req, res) =>
     rainmaker.save().then(() => res.send("Hello a new Rainmaker was added: " + req.body.name));
 })
 
+app.get('/', (req, res) => 
+{
+    console.log(req.body);
+    // Get all rainmakers from database
+})
+
 app.listen(port, () => console.log(`The app listening on port ${port}!`))
