@@ -22,4 +22,12 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/age', (req, res) => {
+    // Get all rainmakers from database
+    Rainmaker.find({age:{$lt:req.body.age}}, function (err, rainmakers) {
+        if (err) throw err;
+        res.json({'status':200, 'result': rainmakers,'message':"Rainmakers retreived successfully"}); 
+    })
+})
+
 app.listen(port, () => console.log(`The app listening on port ${port}!`))
