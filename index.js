@@ -29,5 +29,11 @@ app.get('/age', (req, res) => {
         res.json({'status':200, 'result': rainmakers,'message':"Rainmakers retreived successfully"}); 
     })
 })
-
+app.delete('/rainmaker/delete', (req, res) => {
+    // Get all rainmakers from database
+    Rainmaker.remove({name:req.body.name ,age:req.body.age}, function (err, rainmakers) {
+        if (err) throw err;
+        res.json({'status':200, 'message':"Rainmaker deleted successfully"}); 
+    })
+})
 app.listen(port, () => console.log(`The app listening on port ${port}!`))
