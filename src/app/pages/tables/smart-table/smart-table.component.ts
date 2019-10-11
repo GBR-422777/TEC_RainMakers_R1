@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-
-import { SmartTableData } from '../../../@core/data/smart-table';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -26,24 +25,16 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      id: {
+      _id: {
         title: 'ID',
-        type: 'number',
-      },
-      firstName: {
-        title: 'First Name',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      name: {
+        title: 'Full Name',
         type: 'string',
       },
-      username: {
-        title: 'Username',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
+      major: {
+        title: 'Major',
         type: 'string',
       },
       age: {
@@ -55,9 +46,14 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData) {
-    const data = this.service.getData();
-    this.source.load(data);
+  constructor(private http: HttpClient) {
+    this.getData().then(response =>
+      this.source.load(response['result']));
+  }
+
+  async getData() {
+    return await this.http
+    .get<[]>('http://localhost:3000/').toPromise();
   }
 
   onDeleteConfirm(event): void {
