@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Angular5Csv } from 'angular5-csv/dist/Angular5-csv';
 @Component({
   selector: 'ngx-smart-table',
   templateUrl: './smart-table.component.html',
@@ -108,4 +108,23 @@ export class SmartTableComponent {
     this.http.delete<[]>(this.apiURL + '/rainmakers').toPromise();
     this.source.load([]);
   }
+  downloadCSV() {
+    const options = {
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true,
+      showTitle: true,
+      headers: [
+        'id',
+        'name',
+        'major',
+        'age'
+      ],
+    };
+    this.source.getAll().then(data => {
+      new Angular5Csv(data, 'Rainmakers', options);
+    })
+  }
+  
 }
