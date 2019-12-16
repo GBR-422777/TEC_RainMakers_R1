@@ -28,7 +28,13 @@ app.get('/rainmakers', cors(), (req, res) => {
         res.json({ 'status': 200, 'result': rainmakers, 'message': "Rainmakers retreived successfully" });
     })
 })
-
+app.delete('/rainmakers', cors(), (req, res) => {
+    // Get all rainmakers from database
+    Rainmaker.deleteMany({}, function (err, rainmakers) {
+        if (err) throw err;
+        res.json({ 'status': 200, 'result': rainmakers, 'message': "All Rainmakers removed successfully" });
+    })
+})
 app.get('/age', (req, res) => {
     // Get all rainmakers from database
     Rainmaker.find({ age: { $lt: req.body.age } }, function (err, rainmakers) {
