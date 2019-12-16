@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "16fdbc51-3d02-466c-a95a-ef8358b994ae",
+		"name": "Rainmakers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add rainmaker",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"asasas\",\n\"major\":\"buisiness\",\n\"age\":\"23\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rainmaker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rainmaker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Rainmaker",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"5d9b2e148df2ba240c04bbcd\",\n\"name\":\"dania122\",\n\"major\":\"buisiness\",\n\"age\":\"23\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rainmaker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rainmaker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Rainmaker",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/rainmaker?name&age",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rainmaker"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						},
+						{
+							"key": "major",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all rainmakers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rainmakers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rainmakers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

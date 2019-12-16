@@ -11,7 +11,7 @@ app.use(cors());
 const Rainmaker = mongoose.model('Rainmaker', { name: String, major: String, age: Number });
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.post('/', (req, res) => {
+app.post('/rainmaker', (req, res) => {
     console.log(req.body)
     console.log('hello')
     const rainmaker = new Rainmaker({ name: req.body.name, major: req.body.major, age: req.body.age });
@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
     });
 })
 
-app.get('/', cors(), (req, res) => {
+app.get('/rainmakers', cors(), (req, res) => {
     // Get all rainmakers from database
     Rainmaker.find({}, function (err, rainmakers) {
         if (err) throw err;
@@ -44,18 +44,16 @@ app.delete('/rainmaker', (req, res) => {
         res.json({ 'status': 200, 'message': "Rainmaker deleted successfully" });
     })
 })
-app.put('/update', (req, res) => {
-    // Get all rainmakers from database
-    Rainmaker.find({ name: req.body.name }, function (err, r) {
-        if (err) throw err;
-        console.log("done");
-        rainmaker.name = req.body.name;
-        rainmaker.major = req.body.major;
-        rainmaker.age = req.body.age;
-        rainmaker.save(function (err) {
-            if (err) throw err;
-            res.json({ 'status': 200, 'result': rainmakers, 'message': "Rainmakers updated successfully" });
-        });
+app.put('/rainmaker', (req, res) => {
+
+    console.log(req.body);
+    Rainmaker.findOneAndUpdate({ _id: req.body.id }, { $set: { name: req.body.name, major: req.body.major, age: req.body.age } }, { new: true }).then((docs) => {
+        if (docs) {
+            res.send(docs).status(200);
+        } else {
+            res.send('no such rainmaker').status(500);
+        }
     })
-})
+
+});
 app.listen(port, () => console.log(`The app listening on port ${port}!`))
