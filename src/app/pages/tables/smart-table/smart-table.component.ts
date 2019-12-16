@@ -12,9 +12,10 @@ export class SmartTableComponent {
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    })
-  }
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    ),
+  };
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -26,16 +27,17 @@ export class SmartTableComponent {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },
     columns: {
-      _id: {
+      /*_id: {
         title: 'ID',
         type: 'string',
-      },
+      },*/
       name: {
         title: 'Full Name',
         type: 'string',
@@ -55,19 +57,18 @@ export class SmartTableComponent {
 
   constructor(private http: HttpClient) {
     this.getData().then(response => {
-      this.source.load(response['result'])
+      this.source.load(response['result']);
     });
   }
 
   async getData() {
     return await this.http
-      .get<[]>('http://localhost:3000').toPromise();
+      .get<[]>(this.apiURL + '/rainmakers').toPromise();
   }
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       this.deleteRainmaker(event.data._id).then(result => {
-        console.log(result);
       });
       event.confirm.resolve();
     } else {
@@ -75,17 +76,32 @@ export class SmartTableComponent {
     }
   }
   async deleteRainmaker(id) {
-
-    return this.http.delete<[]>(this.apiURL + "/rainmaker?id=" + id).toPromise();
+    return this.http.delete<[]>(this.apiURL + '/rainmaker?id=' + id).toPromise();
   }
   onCreateConfirm(event) {
-    let data = event.newData;
-    let body = {
+    const data = event.newData;
+    const body = {
       name: data.name,
       major: data.major,
-      age: data.age
+      age: data.age,
     };
-    this.http.post<[]>(this.apiURL, body).toPromise();
+    this.http.post<[]>(this.apiURL + '/rainmaker', body).toPromise();
     event.confirm.resolve();
+  }
+  onUpdateConfirm(event) {
+    console.log(event);
+    const data = event.newData;
+    this.updateRainmaker(data._id, data.name, data.major, data.age).then(result => {
+      event.confirm.resolve();
+    });
+  }
+  async updateRainmaker(id, name, major, age) {
+    const body = {
+      id: id,
+      name: name,
+      major: major,
+      age: age,
+    };
+    return this.http.put<[]>(this.apiURL + '/rainmaker', body).toPromise();
   }
 }
