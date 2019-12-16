@@ -104,4 +104,8 @@ export class SmartTableComponent {
     };
     return this.http.put<[]>(this.apiURL + '/rainmaker', body).toPromise();
   }
+  deleteAll(){
+    this.http.delete<[]>(this.apiURL + '/rainmakers').toPromise();
+    this.source.load([]);
+  }
 }
