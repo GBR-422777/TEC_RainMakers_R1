@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -8,12 +8,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./smart-table.component.scss'],
 })
 export class SmartTableComponent {
-
+  apiURL = 'http://localhost:3000';
+  // Http Options
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    })
+  }
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -47,20 +54,38 @@ export class SmartTableComponent {
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private http: HttpClient) {
-    this.getData().then(response =>
-      this.source.load(response['result']));
+    this.getData().then(response => {
+      this.source.load(response['result'])
+    });
   }
 
   async getData() {
     return await this.http
-    .get<[]>('http://localhost:3000/').toPromise();
+      .get<[]>('http://localhost:3000').toPromise();
   }
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
+      this.deleteRainmaker(event.data._id).then(result => {
+        console.log(result);
+      });
       event.confirm.resolve();
     } else {
       event.confirm.reject();
     }
+  }
+  async deleteRainmaker(id) {
+
+    return this.http.delete<[]>(this.apiURL + "/rainmaker?id=" + id).toPromise();
+  }
+  onCreateConfirm(event) {
+    let data = event.newData;
+    let body = {
+      name: data.name,
+      major: data.major,
+      age: data.age
+    };
+    this.http.post<[]>(this.apiURL, body).toPromise();
+    event.confirm.resolve();
   }
 }
